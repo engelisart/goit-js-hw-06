@@ -8,5 +8,5 @@ sizeElem.addEventListener('input', onSizeElemChange);
 
 function onSizeElemChange(event) {
     const size = event.target.value;
-    textElem.style.transform = `scale(${size})`;
+    textElem.style.fontSize = size + 'px';
 }
