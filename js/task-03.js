@@ -15,13 +15,10 @@ const images = [
 
 const listGallery = document.querySelector(".gallery");
 
-images.forEach((img) => {
-  const itemGallery = document.createElement("li");
-  const imageGallery = document.createElement("img");
+const imagesHTML = images.map((img) => `
+  <li>
+    <img src="${img.url}" alt="${img.alt}">
+  </li>
+`).join('');
 
-  imageGallery.src = img.url;
-  imageGallery.alt = img.alt;
-
-  itemGallery.appendChild(imageGallery);
-  listGallery.insertAdjacentElement('afterbegin', itemGallery);
-});
+listGallery.insertAdjacentHTML('afterbegin', imagesHTML);

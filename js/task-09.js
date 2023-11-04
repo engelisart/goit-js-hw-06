@@ -9,8 +9,11 @@ const colorSpan = document.querySelector('.color');
 
 colorElem.addEventListener('click', onColorElemClick);
 
+let currentColor = getRandomHexColor();
+
 function onColorElemClick(event) {
-document.body.style.backgroundColor = getRandomHexColor();
-colorSpan.textContent = getRandomHexColor();
+document.body.style.backgroundColor = currentColor;
+colorSpan.textContent = currentColor;
 console.log(colorSpan)
+currentColor = getRandomHexColor();
 }
